@@ -20,6 +20,8 @@ function git_prompt_with_brackets() {
 }
 
 PROMPT=$'%{\e[1;34m%}%B╭─[%b%{\e[0m%}%{\e[1;36m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[1;35m%}%m%{\e[1;34m%}%B] ─ [%b%{\e[1;34m%}%B'%D{"%a %b %d, %H:%M"}%b$'%{\e[1;34m%}%B]%b%{\e[0m%}
+%{\e[1;34m%}%B│%b%{\e[0m%}
 %{\e[1;34m%}%B├─[%b%{\e[1;32m%}%~%{\e[1;34m%}%B]%b%{\e[0m%}
+%{\e[1;34m%}%B│%b%{\e[0m%}
 %{\e[1;34m%}%B╰─$(git_prompt_with_brackets)[%{\e[1;32m%}$%{\e[1;34m%}]%{\e[0m%}%b '
 PS2=$' \e[1;34m%}%B>%{\e[0m%}%b '
