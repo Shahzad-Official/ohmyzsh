@@ -83,8 +83,6 @@ plugins=(
   jsontools
   web-search
   command-not-found
-  docker
-  docker-compose
   z
   vscode
 )
