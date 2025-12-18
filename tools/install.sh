@@ -323,6 +323,12 @@ setup_ohmyzsh() {
     fmt_error "git clone of oh-my-zsh repo failed"
     exit 1
   }
+
+  # Initialize and update submodules (for custom plugins)
+  git -C "$ZSH" submodule update --init --recursive || {
+    fmt_error "failed to initialize submodules"
+  }
+
   # Exit installation directory
   cd -
 
