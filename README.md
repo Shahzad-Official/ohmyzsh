@@ -90,11 +90,11 @@ Twitter), and join us on [Discord](https://discord.gg/ohmyzsh).
 Oh My Zsh is installed by running one of the following commands in your terminal. You can install this via the
 command-line with either `curl`, `wget` or another similar tool.
 
-| Method    | Command                                                                                           |
-| :-------- | :------------------------------------------------------------------------------------------------ |
-| **curl**  | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` |
-| **wget**  | `sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`   |
-| **fetch** | `sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` |
+| Method    | Command                                                                                                  |
+| :-------- | :------------------------------------------------------------------------------------------------------- |
+| **curl**  | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shahzad-Official/ohmyzsh/main/tools/install.sh)"` |
+| **wget**  | `sh -c "$(wget -O- https://raw.githubusercontent.com/Shahzad-Official/ohmyzsh/main/tools/install.sh)"`   |
+| **fetch** | `sh -c "$(fetch -o - https://raw.githubusercontent.com/Shahzad-Official/ohmyzsh/main/tools/install.sh)"` |
 
 Alternatively, the installer is also mirrored outside GitHub. Using this URL instead may be required if you're
 in a country like China or India (for certain ISPs), that blocks `raw.githubusercontent.com`:
@@ -114,7 +114,7 @@ It's a good idea to inspect the install script from projects you don't yet know.
 downloading the install script first, looking through it so everything looks normal, then running it:
 
 ```sh
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+wget https://raw.githubusercontent.com/Shahzad-Official/ohmyzsh/main/tools/install.sh
 sh install.sh
 ```
 
@@ -266,7 +266,7 @@ If you're running the Oh My Zsh install script as part of an automated install, 
 shell, and it also won't run `zsh` when the installation has finished.
 
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shahzad-Official/ohmyzsh/main/tools/install.sh)" "" --unattended
 ```
 
 If you're in China, India, or another country that blocks `raw.githubusercontent.com`, you may have to
@@ -276,8 +276,8 @@ substitute the URL for `https://install.ohmyz.sh` for it to install.
 
 The install script also accepts these variables to allow the installation of a different repository:
 
-- `REPO` (default: `ohmyzsh/ohmyzsh`): this takes the form of `owner/repository`. If you set this variable,
-  the installer will look for a repository at `https://github.com/{owner}/{repository}`.
+- `REPO` (default: `Shahzad-Official/ohmyzsh`): this takes the form of `owner/repository`. If you set this
+  variable, the installer will look for a repository at `https://github.com/{owner}/{repository}`.
 
 - `REMOTE` (default: `https://github.com/${REPO}.git`): this is the full URL of the git repository clone. You
   can use this setting if you want to install from a fork that is not on GitHub (GitLab, Bitbucket...) or if
@@ -300,7 +300,7 @@ REPO=apjanke/oh-my-zsh BRANCH=edge sh install.sh
 ##### 1. Clone The Repository <!-- omit in toc -->
 
 ```sh
-git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+git clone https://github.com/Shahzad-Official/ohmyzsh.git ~/.oh-my-zsh
 ```
 
 ##### 2. _Optionally_, Backup Your Existing `~/.zshrc` File <!-- omit in toc -->
@@ -426,9 +426,9 @@ turn it off by setting the following in your .zshrc file, before Oh My Zsh is so
 zstyle ':omz:alpha:lib:git' async-prompt no
 ```
 
-If your problem is that the git prompt just stopped appearing, you can try to force it by setting the following
-configuration before `oh-my-zsh.sh` is sourced. If it still does not work, please open an issue with your
-case.
+If your problem is that the git prompt just stopped appearing, you can try to force it by setting the
+following configuration before `oh-my-zsh.sh` is sourced. If it still does not work, please open an issue with
+your case.
 
 ```sh
 zstyle ':omz:alpha:lib:git' async-prompt force
@@ -487,14 +487,15 @@ wait a week?) you just need to run:
 omz update
 ```
 
-> [!NOTE]
-> If you want to automate this process in a script, you should call directly the `upgrade` script, like this:
+> [!NOTE] If you want to automate this process in a script, you should call directly the `upgrade` script,
+> like this:
 >
 > ```sh
 > $ZSH/tools/upgrade.sh
 > ```
 >
-> See more options in the [FAQ: How do I update Oh My Zsh?](https://github.com/ohmyzsh/ohmyzsh/wiki/FAQ#how-do-i-update-oh-my-zsh).
+> See more options in the
+> [FAQ: How do I update Oh My Zsh?](https://github.com/ohmyzsh/ohmyzsh/wiki/FAQ#how-do-i-update-oh-my-zsh).
 >
 > **USE OF `omz update --unattended` HAS BEEN REMOVED, AS IT HAS SIDE EFFECTS**.
 
