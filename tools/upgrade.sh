@@ -191,22 +191,28 @@ if is_tty; then
   RESET=$(printf '\033[0m')
 fi
 
-# Update upstream remote to ohmyzsh org
+# Update upstream remote to Shahzad-Official org
 git remote -v | while read remote url extra; do
   case "$url" in
   git://github.com/robbyrussell/oh-my-zsh(|.git))
     # Update out-of-date "unauthenticated git protocol on port 9418" to https
-    git remote set-url "$remote" "https://github.com/ohmyzsh/ohmyzsh.git" ;;
+    git remote set-url "$remote" "https://github.com/Shahzad-Official/ohmyzsh.git" ;;
   https://github.com/robbyrussell/oh-my-zsh(|.git))
-    git remote set-url "$remote" "https://github.com/ohmyzsh/ohmyzsh.git" ;;
+    git remote set-url "$remote" "https://github.com/Shahzad-Official/ohmyzsh.git" ;;
   git@github.com:robbyrussell/oh-my-zsh(|.git))
-    git remote set-url "$remote" "git@github.com:ohmyzsh/ohmyzsh.git" ;;
-  https://github.com/ohmyzsh/ohmyzsh(|.git)) ;;
-  git@github.com:ohmyzsh/ohmyzsh(|.git)) ;;
+    git remote set-url "$remote" "git@github.com:Shahzad-Official/ohmyzsh.git" ;;
+  git://github.com/ohmyzsh/ohmyzsh(|.git))
+    git remote set-url "$remote" "https://github.com/Shahzad-Official/ohmyzsh.git" ;;
+  https://github.com/ohmyzsh/ohmyzsh(|.git))
+    git remote set-url "$remote" "https://github.com/Shahzad-Official/ohmyzsh.git" ;;
+  git@github.com:ohmyzsh/ohmyzsh(|.git))
+    git remote set-url "$remote" "git@github.com:Shahzad-Official/ohmyzsh.git" ;;
+  https://github.com/Shahzad-Official/ohmyzsh(|.git)) ;;
+  git@github.com:Shahzad-Official/ohmyzsh(|.git)) ;;
   *) continue ;;
   esac
 
-  # If we reach this point we have found the proper ohmyzsh upstream remote. If we don't,
+  # If we reach this point we have found the proper Shahzad-Official upstream remote. If we don't,
   # we'll only update from the set remote if `oh-my-zsh.remote` has been set to a remote,
   # as when installing from a fork.
   git config --local oh-my-zsh.remote "$remote"
