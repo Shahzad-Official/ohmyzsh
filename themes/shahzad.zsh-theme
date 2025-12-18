@@ -10,9 +10,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{\e[1;32m%}"
 
 # Custom git prompt with brackets only when in a git repo
 function git_prompt_with_brackets() {
-  local git_info=$(git_prompt_info)
-  if [[ -n "$git_info" ]]; then
-    echo "%{\e[0;35m%}($git_info%{\e[0;35m%})%{\e[1;34m%} ─ "
+  # Check if we're in a git repository
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    local git_info=$(git_prompt_info)
+    if [[ -n "$git_info" ]]; then
+      echo "%{\e[0;35m%}($git_info%{\e[0;35m%})%{\e[1;34m%} ─ "
+    fi
   fi
 }
 
